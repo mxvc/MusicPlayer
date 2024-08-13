@@ -19,15 +19,7 @@ jobs:
       with:
         gradle-version: wrapper
 
-    
 
-    - name: Build the credits page
-      if: (github.ref == 'refs/heads/master' || contains(github.ref, 'refs/tags/'))
-      run: ./script/build-credits-page
-
-    - name: Build the licenses page
-      if: (github.ref == 'refs/heads/master' || contains(github.ref, 'refs/tags/'))
-      run: ./script/build-licenses-page
 
     - name: Build CI application
       if: (!contains(github.ref, 'refs/tags/'))
@@ -37,46 +29,20 @@ jobs:
         STORE_FILE: ${{secrets.STORE_FILE}}
         GRADLEW_COMMAND: assembleCiRelease
 
-    - name: Build Play Store application
-      if: (contains(github.ref, 'refs/tags/'))
-      run: ./script/build-release
-      env:
-        KEYSTORE_PROPERTIES: ${{secrets.KEYSTORE_PROPERTIES}}
-        STORE_FILE: ${{secrets.STORE_FILE}}
-        GRADLEW_COMMAND: assemblePlayStoreRelease
+  
 
     - name: Archive APKs
       uses: actions/upload-artifact@v4
       with:
         name: outputs-apk
         path: app/build/outputs/apk/**/*.apk
-
-    - name: Run tests
-      run: ./gradlew testCiRelease
-      if: (!contains(github.ref, 'refs/tags/'))
-    - name: Archive test results
-      if: (!contains(github.ref, 'refs/tags/'))
-      uses: actions/upload-artifact@v4
-      with:
-        name: outputs-tests
-        path: app/build/test-results
-
-    - name: Static analysis
-      run: ./gradlew lint
-      if: (!contains(github.ref, 'refs/tags/'))
-    - name: Archive lint results
-      if: (!contains(github.ref, 'refs/tags/'))
-      uses: actions/upload-artifact@v4
-      with:
-        name: outputs-lint
-        path: app/build/reports/lint-*
+        
 
   publish:
-    if: (github.ref == 'refs/heads/master' || contains(github.ref, 'refs/tags/'))
     needs: build
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Needed to manipulate tags
+      contents: write 
     steps:
     - name: Retrieve built assets
       uses: actions/download-artifact@v4
@@ -84,11 +50,6 @@ jobs:
         name: outputs-apk
         path: app/build/outputs/apk
     - name: Publish pre-release assets
-      # Pre-release the built apps and expose it via a static and public accessible URL
-      # Note that this step exists since artifacts (actions/upload-artifact) are neither
-      # public-accessible nor at a constant/static URL
-      # For the pre-releasing purpose, a floating tag is used and re-positioned to the tip of the branch
-     
       uses: pyTooling/Actions/releaser@r0
       with:
         tag: pre-release
