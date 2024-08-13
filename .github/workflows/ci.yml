@@ -19,9 +19,7 @@ jobs:
       with:
         gradle-version: wrapper
 
-    - name: Merge feature branches
-      if: (github.ref == 'refs/heads/cont-integ')
-      run: ./script/merge-feature-branches
+    
 
     - name: Build the credits page
       if: (github.ref == 'refs/heads/master' || contains(github.ref, 'refs/tags/'))
