@@ -6,22 +6,10 @@
     android:orientation="vertical"
     tools:context=".ui.activities.AboutActivity">
 
-    <include layout="@layout/status_bar" />
+    
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        style="@style/Toolbar"
-        android:background="@android:color/transparent" />
+  
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:isScrollContainer="true">
-
-        <include layout="@layout/activity_about_content"
-            android:id="@+id/content" />
-
-    </ScrollView>
+   
 
 </LinearLayout>
