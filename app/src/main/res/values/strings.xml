@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="pref_header_migrating">迁移</string>
+    <string name="pref_header_development">开发</string>
     <string name="genre_multiple">流派 (一行一个)</string>
 
     <string name="what_do_you_want_to_share">您想分享哪些内容？</string>
