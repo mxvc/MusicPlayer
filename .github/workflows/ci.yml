@@ -43,7 +43,7 @@ jobs:
     - name: Publish pre-release assets
       uses: pyTooling/Actions/releaser@r0
       with:
-        tag: pre-release
+        tag: release
         token: ${{ secrets.GITHUB_TOKEN }}
         rm: true # clean past assets
         files: |
