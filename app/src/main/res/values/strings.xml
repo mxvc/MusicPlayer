@@ -352,8 +352,8 @@
     <string name="auto_limited_listing_subtitle">打开程序时显示完整列表</string>
 
     <string name="action_import_from_playlist">Import from playlist</string>
-    <string name="pref_title_enqueue_song_default_choice">Default action on choosing/tapping a song while browsing</string>
-    <string name="action_always_ask_for_confirmation">Always ask for actions</string>
+    <string name="pref_title_enqueue_song_default_choice">点选歌曲时的默认动作</string>
+    <string name="action_always_ask_for_confirmation">总是询问</string>
     <string name="about_to_add_title_to_playing_queue">About to add 1 song into the playing queue.\nHow do you want to proceed with this song?</string>
     <string name="about_to_add_x_titles_to_playing_queue">About to add %1$d songs into the playing queue.\nHow do you want to proceed with these songs?</string>
     <string name="failed_restore_playing_queue">Cannot restore, previous queue is corrupted</string>
