@@ -65,47 +65,23 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
 
         setContentView(layoutBinding.getRoot());
 
-        setDrawUnderStatusbar();
+       
 
-        setStatusbarColorAuto();
-        setNavigationbarColorAuto();
-        setTaskDescriptionColorAuto();
-
-        setUpViews();
+        
     }
 
-    private void setUpViews() {
-        setUpToolbar();
-        setUpAppVersion();
-        setUpContributorsView();
-        setUpOnClickListeners();
-    }
+   
 
-    private void setUpToolbar() {
-        layoutBinding.toolbar.setBackgroundColor(ThemeStore.primaryColor(this));
-        setSupportActionBar(layoutBinding.toolbar);
-        //noinspection ConstantConditions
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
+  
 
-    private void setUpAppVersion() {
-        layoutBinding.content.cardAboutApp.appVersion.setText(getCurrentVersionName(this));
-    }
+    
 
     // Needed as webview is interpreting pixels as dp
     private static int px2dip(Context context, float pxValue) {
         final float scale =  context.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
-    // Needed as webview doesn't understand #aarrggbb
-    private static String hex2rgba(int color) {
-        float a = Color.alpha(color) / 255.0f;
-        int r = Color.red(color);
-        int g = Color.green(color);
-        int b = Color.blue(color);
-
-        return "rgba("+r+","+g+","+b+","+String.format(Locale.US, "%.02f", a)+")";
-    }
+   
 
     @SuppressLint("RestrictedApi")
     private void setUpContributorsView()
