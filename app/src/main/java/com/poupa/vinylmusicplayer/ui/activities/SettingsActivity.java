@@ -39,15 +39,12 @@ import com.poupa.vinylmusicplayer.dialogs.BottomSheetDialog.BottomSheetDialogWit
 import com.poupa.vinylmusicplayer.dialogs.BottomSheetDialog.BottomSheetDialogWithButtons.ButtonInfo;
 import com.poupa.vinylmusicplayer.preferences.BlacklistPreference;
 import com.poupa.vinylmusicplayer.preferences.BlacklistPreferenceDialog;
-import com.poupa.vinylmusicplayer.preferences.ExportSettingsPreference;
-import com.poupa.vinylmusicplayer.preferences.ExportSettingsPreferenceDialog;
 import com.poupa.vinylmusicplayer.preferences.LibraryPreference;
 import com.poupa.vinylmusicplayer.preferences.LibraryPreferenceDialog;
 import com.poupa.vinylmusicplayer.preferences.NowPlayingScreenPreference;
 import com.poupa.vinylmusicplayer.preferences.NowPlayingScreenPreferenceDialog;
 import com.poupa.vinylmusicplayer.preferences.PreAmpPreference;
 import com.poupa.vinylmusicplayer.preferences.PreAmpPreferenceDialog;
-import com.poupa.vinylmusicplayer.preferences.SharedPreferencesImporter;
 import com.poupa.vinylmusicplayer.preferences.SmartPlaylistPreference;
 import com.poupa.vinylmusicplayer.preferences.SmartPlaylistPreferenceDialog;
 import com.poupa.vinylmusicplayer.preferences.SongConfirmationPreference;
@@ -201,7 +198,7 @@ public class SettingsActivity extends AbsBaseActivity implements ColorChooserDia
             addPreferencesFromResource(R.xml.pref_images);
             addPreferencesFromResource(R.xml.pref_audio);
             addPreferencesFromResource(R.xml.pref_playlists);
-            addPreferencesFromResource(R.xml.pref_migrating);
+
             addPreferencesFromResource(R.xml.pref_development);
 
             // set summary for whitelist, in order to indicate start directory
@@ -224,8 +221,6 @@ public class SettingsActivity extends AbsBaseActivity implements ColorChooserDia
                 return PreAmpPreferenceDialog.newInstance();
             } else if (preference instanceof SmartPlaylistPreference) {
                 return SmartPlaylistPreferenceDialog.newInstance(preference.getKey());
-            } else if (preference instanceof ExportSettingsPreference) {
-                return ExportSettingsPreferenceDialog.newInstance();
             } else if (preference instanceof SongConfirmationPreference) {
                 final List<ButtonInfo> possibleActions = Arrays.asList(
                         SongConfirmationPreference.ASK.setAction(() -> PreferenceUtil.getInstance().setEnqueueSongsDefaultChoice(PreferenceUtil.ENQUEUE_SONGS_CHOICE_ASK)),
@@ -545,13 +540,7 @@ public class SettingsActivity extends AbsBaseActivity implements ColorChooserDia
                 });
             }
 
-            final Preference importSettings = findPreference(PreferenceUtil.IMPORT_SETTINGS);
-            if (importSettings != null) {
-                importSettings.setOnPreferenceClickListener((preference) -> {
-                    sharedPreferencesImporter.launch(new Intent(getContext(), SharedPreferencesImporter.class));
-                    return true;
-                });
-            }
+
 
             updateNowPlayingScreen();
             updatePlaylistsSummary();
