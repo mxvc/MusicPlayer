@@ -46,5 +46,6 @@ jobs:
         tag: release
         token: ${{ secrets.GITHUB_TOKEN }}
         rm: true # clean past assets
+        prerelease: false
         files: |
           app/build/outputs/apk/ci/release/*.apk
