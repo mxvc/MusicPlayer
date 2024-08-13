@@ -128,9 +128,7 @@
         <activity
             android:name="com.poupa.vinylmusicplayer.ui.activities.SettingsActivity"
             android:label="@string/action_settings" />
-        <activity
-            android:name="com.poupa.vinylmusicplayer.ui.activities.AboutActivity"
-            android:label="@string/action_about" />
+
         <activity
             android:name="com.poupa.vinylmusicplayer.ui.activities.intro.AppIntroActivity"
             android:label="@string/intro_label"

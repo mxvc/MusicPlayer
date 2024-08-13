@@ -188,8 +188,6 @@ public class MainActivity extends AbsSlidingMusicPanelActivity implements Palett
                         .show();
             } else if (itemId == R.id.nav_settings) {
                 new Handler().postDelayed(() -> startActivity(new Intent(MainActivity.this, SettingsActivity.class)), 200);
-            } else if (itemId == R.id.nav_about) {
-                new Handler().postDelayed(() -> startActivity(new Intent(MainActivity.this, AboutActivity.class)), 200);
             }
             return true;
         });

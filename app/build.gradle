@@ -1,37 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-
-// For dependencies license report
-// To use: ./gradlew license<BuildVariant>Report
-apply plugin: 'com.cmgapps.licenses'
-licenses {
-    reports {
-        // Enable this JSON generation to get the full data structure
-        // json {
-        //    enabled = true
-        //    destination = file("$buildDir/reports/licenses/dependencies-licenses.json")
-        //}
-
-        html.enabled = false // html is enabled by default
-
-        // Generate CSV format
-        custom {
-            enabled = true
-            destination = file("$buildDir/reports/licenses/dependencies-licenses.csv")
-            generate {
-                final Collection list -> list.collect{
-                    [
-                        (it.mavenCoordinates.groupId + '.' + it.mavenCoordinates.artifactId) + (it.name != null ? ' - ' + it.name : ''),
-                        it.description != null ? it.description.replaceAll('[;\\n\\r]+', ' ') : '',
-                        it.licenses[0] != null ? it.licenses[0].name : '',
-                        it.licenses[0] != null ? it.licenses[0].url : '',
-                    ].join(';')
-                }.join('\n') }
-        }
-    }
-}
-
 android {
     compileSdk 34
     namespace 'com.poupa.vinylmusicplayer'
@@ -184,7 +153,7 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    testImplementation 'junit:junit:4.13.2'
+
 
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
 }
