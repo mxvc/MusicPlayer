@@ -40,12 +40,12 @@ jobs:
       with:
         name: outputs-apk
         path: app/build/outputs/apk
-    - name: Publish pre-release assets
-      uses: pyTooling/Actions/releaser@r0
+    - uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        tag: release
-        token: ${{ secrets.GITHUB_TOKEN }}
-        rm: true # clean past assets
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: v${{github.run_id}}
+        title: "apk"
         prerelease: false
         files: |
           app/build/outputs/apk/ci/release/*.apk
+   
