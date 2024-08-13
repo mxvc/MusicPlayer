@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="saf_read_failed">File read failed: %s</string>
+    <string name="sort_order_year">Year</string>
+    <string name="sort_order_date_added">Added</string>
+    <string name="saf_guide_slide2_description_android_r">You need to select your SD card directory that contains your music (cannot be the root directory)</string>
+
     <string name="pref_header_migrating">迁移</string>
     <string name="pref_header_development">开发</string>
     <string name="genre_multiple">流派 (一行一个)</string>
