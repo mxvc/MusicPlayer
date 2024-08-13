@@ -5,9 +5,9 @@
     <string name="sort_order_date_added">Added</string>
     <string name="saf_guide_slide2_description_android_r">You need to select your SD card directory that contains your music (cannot be the root directory)</string>
 
-    <string name="pref_header_migrating">迁移</string>
+   
     <string name="pref_header_development">开发</string>
-    <string name="genre_multiple">流派 (一行一个)</string>
+    <string name="genre_multiple">音乐类型 (一行一个)</string>
 
     <string name="what_do_you_want_to_share">您想分享哪些内容？</string>
     <string name="currently_listening_to_x_by_x">当前正在播放 %2$s 的 %1$s 。</string>
