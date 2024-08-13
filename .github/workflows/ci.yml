@@ -19,17 +19,8 @@ jobs:
       with:
         gradle-version: wrapper
 
-
-
     - name: Build CI application
-      if: (!contains(github.ref, 'refs/tags/'))
-      run: ./script/build-release
-      env:
-        KEYSTORE_PROPERTIES: ${{secrets.KEYSTORE_PROPERTIES}}
-        STORE_FILE: ${{secrets.STORE_FILE}}
-        GRADLEW_COMMAND: assembleCiRelease
-
-  
+      run: ./gradlew assembleCiRelease
 
     - name: Archive APKs
       uses: actions/upload-artifact@v4
