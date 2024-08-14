@@ -144,6 +144,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/track_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -161,6 +162,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/disc_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

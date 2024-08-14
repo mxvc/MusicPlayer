@@ -41,6 +41,7 @@
                 </com.poupa.vinylmusicplayer.views.WidthFitSquareLayout>
 
                 <LinearLayout
+                    android:id="@+id/palette_color_container"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/item_grid_color_container_height"
                     android:gravity="center_vertical"
@@ -64,6 +65,7 @@
                     </com.poupa.vinylmusicplayer.views.TouchInterceptHorizontalScrollView>
 
                     <com.poupa.vinylmusicplayer.views.TouchInterceptHorizontalScrollView
+                        android:id="@+id/text_scrollview"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 

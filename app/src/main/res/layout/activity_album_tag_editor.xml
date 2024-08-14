@@ -68,6 +68,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/editables"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/header"
@@ -80,6 +81,7 @@
                     android:layout_height="wrap_content">
 
                     <EditText
+                        android:id="@+id/album_artist"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -147,6 +149,7 @@
         tools:ignore="RtlHardcoded" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/play_pause_fab"
         style="@style/Fab"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin_top_left_right"

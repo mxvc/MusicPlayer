@@ -3,6 +3,19 @@
     <string name="app_name" translatable="false">磁带随身听</string>
     <string name="app_short_name" translatable="false">磁带</string>
 
+    <string name="adrien_poupa" translatable="false">Adrien Poupa</string>
+    <string name="karim_abou_zeid" translatable="false">Karim Abou Zeid</string>
+    <string name="aidan_follestad" translatable="false">Aidan Follestad</string>
+    <string name="maarten_corpel" translatable="false">Maarten Corpel</string>
+    <string name="michael_cook_cookicons" translatable="false">Michael Cook (Cookicons)</string>
+    <string name="aleksandar_tesic" translatable="false">Aleksandar Tešić</string>
+    <string name="eugene_cheung" translatable="false">Eugene Cheung</string>
+    <string name="adrian" translatable="false">Adrian</string>
+
+    <string name="google_plus" translatable="false">Google Plus</string>
+    <string name="git_hub" translatable="false">GitHub</string>
+    <string name="twitter" translatable="false">Twitter</string>
+
     <string name="card" translatable="false">卡片</string>
     <string name="flat" translatable="false">扁平</string>
 

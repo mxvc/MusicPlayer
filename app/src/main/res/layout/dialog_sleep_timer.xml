@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <com.triggertrap.seekarc.SeekArc
+        android:id="@+id/seek_arc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -32,6 +33,7 @@
             tools:ignore="Autofill,LabelFor" />
 
         <TextView
+            android:id="@+id/unit_display_min"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -43,6 +45,7 @@
     </RelativeLayout>
 
     <com.kabouzeid.appthemehelper.common.views.ATECheckBox
+        android:id="@+id/should_finish_last_song"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
