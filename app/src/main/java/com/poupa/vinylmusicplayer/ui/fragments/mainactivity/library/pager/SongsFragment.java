@@ -9,7 +9,6 @@ import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.poupa.vinylmusicplayer.R;
-import com.poupa.vinylmusicplayer.adapter.song.ShuffleButtonSongAdapter;
 import com.poupa.vinylmusicplayer.adapter.song.SongAdapter;
 import com.poupa.vinylmusicplayer.interfaces.LoaderIds;
 import com.poupa.vinylmusicplayer.loader.SongLoader;
@@ -47,14 +46,7 @@ public class SongsFragment extends AbsLibraryPagerRecyclerViewCustomGridSizeFrag
         boolean usePalette = loadUsePalette();
         List<? extends Song> dataSet = getAdapter() == null ? new ArrayList<>() : getAdapter().getDataSet();
 
-        if (getGridSize() <= getMaxGridSizeForList()) {
-            return new ShuffleButtonSongAdapter(
-                    getLibraryFragment().getMainActivity(),
-                    dataSet,
-                    itemLayoutRes,
-                    usePalette,
-                    getLibraryFragment().getMainActivity());
-        }
+
         return new SongAdapter(
                 getLibraryFragment().getMainActivity(),
                 dataSet,
