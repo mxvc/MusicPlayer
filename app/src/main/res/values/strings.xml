@@ -203,8 +203,8 @@
     <string name="intro_label">介绍页</string>
     <string name="open_playing_queue_instruction">上滑正在播放界面内的卡片即可展开播放队列。</string>
     <string name="rearrange_playing_queue_instruction">通过拖动歌曲名前面的序列号来调整播放队列的顺序。</string>
-    <string name="library">媒体库</string>
-    <string name="folders">文件夹</string>
+    <string name="library">音乐库</string>
+    <string name="folders">本地文件</string>
     <string name="saved_playlist_to">已保存播放列表到 %s。</string>
     <string name="failed_to_save_playlist">保存播放列表（%s）失败。</string>
     <string name="not_listed_in_media_store"><![CDATA[<b>%s</b> 没有列在媒体储存中。]]></string>
