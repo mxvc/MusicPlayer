@@ -53,8 +53,6 @@ public abstract class AbsPlayerFragment
         extends AbsMusicServiceFragment
         implements PlayerAlbumCoverFragment.Callbacks, Toolbar.OnMenuItemClickListener, PaletteColorHolder
 {
-    @Nullable
-    private Callbacks callbacks;
 
     protected PlayingQueueAdapter playingQueueAdapter;
     private RecyclerView.Adapter wrappedAdapter;
@@ -62,21 +60,9 @@ public abstract class AbsPlayerFragment
     private RecyclerViewSwipeManager recyclerViewSwipeManager;
     protected LinearLayoutManager layoutManager;
 
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        try {
-            callbacks = (Callbacks) context;
-        } catch (ClassCastException e) {
-            throw new RuntimeException(context.getClass().getSimpleName() + " must implement " + Callbacks.class.getSimpleName());
-        }
-    }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        callbacks = null;
-    }
+
+
 
     protected void setUpRecyclerView(RecyclerView recyclerView, final SlidingUpPanelLayout slidingUpPanelLayout) {
         RecyclerViewTouchActionGuardManager recyclerViewTouchActionGuardManager = new RecyclerViewTouchActionGuardManager();
@@ -257,16 +243,6 @@ public abstract class AbsPlayerFragment
 
     public abstract boolean onBackPressed();
 
-    public interface Callbacks {
-        void onPaletteColorChanged();
-    }
-
-    @Override
-    public void onColorChanged(int color) {
-        if (callbacks != null) {
-            callbacks.onPaletteColorChanged();
-        }
-    }
 
     @Override
     public void onToolbarToggled() {

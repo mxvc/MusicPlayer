@@ -23,16 +23,14 @@ import com.poupa.vinylmusicplayer.helper.WeakMethodReference;
 import com.poupa.vinylmusicplayer.ui.fragments.player.AbsPlayerFragment;
 import com.poupa.vinylmusicplayer.ui.fragments.player.MiniPlayerFragment;
 import com.poupa.vinylmusicplayer.ui.fragments.player.NowPlayingScreen;
-import com.poupa.vinylmusicplayer.ui.fragments.player.card.CardPlayerFragment;
 import com.poupa.vinylmusicplayer.ui.fragments.player.flat.FlatPlayerFragment;
-import com.poupa.vinylmusicplayer.util.PreferenceUtil;
 import com.poupa.vinylmusicplayer.util.ViewUtil;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 /**
  * @author Karim Abou Zeid (kabouzeid)
  */
-public abstract class AbsSlidingMusicPanelActivity extends AbsMusicServiceActivity implements SlidingUpPanelLayout.PanelSlideListener, CardPlayerFragment.Callbacks {
+public abstract class AbsSlidingMusicPanelActivity extends AbsMusicServiceActivity implements SlidingUpPanelLayout.PanelSlideListener {
     SlidingUpPanelLayout slidingUpPanelLayout;
 
     private int navigationbarColor;
@@ -249,14 +247,7 @@ public abstract class AbsSlidingMusicPanelActivity extends AbsMusicServiceActivi
         return false;
     }
 
-    @Override
-    public void onPaletteColorChanged() {
-        if (getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED) {
-            int playerFragmentColor = playerFragment.getPaletteColor();
-            super.setTaskDescriptionColor(playerFragmentColor);
-            animateNavigationBarColor(playerFragmentColor);
-        }
-    }
+
 
     @Override
     public void setLightStatusbar(boolean enabled) {

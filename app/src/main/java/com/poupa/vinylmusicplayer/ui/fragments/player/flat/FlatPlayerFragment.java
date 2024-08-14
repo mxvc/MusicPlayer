@@ -227,7 +227,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements SlidingUpPa
         animateColorChange(color);
         playbackControlsFragment.setDark(ColorUtil.isColorLight(color));
 
-        super.onColorChanged(color);
     }
 
     @Override
