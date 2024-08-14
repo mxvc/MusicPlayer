@@ -143,7 +143,6 @@ public final class PreferenceUtil {
 
     private static final String SAF_SDCARD_URI = PrefKey.nonExportableKey("saf_sdcard_uri");
 
-    public static final String ENQUEUE_SONGS_DEFAULT_CHOICE = PrefKey.exportableKey("enqueue_songs_default_choice");
     public static final int ENQUEUE_SONGS_CHOICE_ASK = 0;
     public static final int ENQUEUE_SONGS_CHOICE_REPLACE = 1;
     public static final int ENQUEUE_SONGS_CHOICE_NEXT = 2;
@@ -883,15 +882,9 @@ public final class PreferenceUtil {
         return result;
     }
 
-    public int getEnqueueSongsDefaultChoice() {
-        return mPreferences.getInt(ENQUEUE_SONGS_DEFAULT_CHOICE, ENQUEUE_SONGS_CHOICE_REPLACE);
-    }
 
-    public void setEnqueueSongsDefaultChoice(int choice) {
-        mPreferences.edit()
-                .putInt(ENQUEUE_SONGS_DEFAULT_CHOICE, choice)
-                .apply();
-    }
+
+
 
     public boolean isQueueSyncWithMediaStoreEnabled() {
         return mPreferences.getBoolean(QUEUE_SYNC_MEDIA_STORE_ENABLED, false);

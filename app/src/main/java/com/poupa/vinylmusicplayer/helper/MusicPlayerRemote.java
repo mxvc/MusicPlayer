@@ -25,7 +25,6 @@ import com.poupa.vinylmusicplayer.dialogs.BottomSheetDialog.BottomSheetDialogWit
 import com.poupa.vinylmusicplayer.discog.Discography;
 import com.poupa.vinylmusicplayer.misc.queue.IndexedSong;
 import com.poupa.vinylmusicplayer.model.Song;
-import com.poupa.vinylmusicplayer.preferences.SongConfirmationPreference;
 import com.poupa.vinylmusicplayer.service.MusicService;
 import com.poupa.vinylmusicplayer.util.PreferenceUtil;
 import com.poupa.vinylmusicplayer.util.SafeToast;
@@ -256,37 +255,8 @@ public class MusicPlayerRemote {
         final int adjustedPosition = Math.max(positionInQueue, 0);
         final ArrayList<Song> songsToAdd = new ArrayList<>(queue.subList(adjustedPosition, queue.size()));
 
-        final List<BottomSheetDialogWithButtons.ButtonInfo> possibleActions = Arrays.asList(
-                SongConfirmationPreference.REPLACE.setAction(() -> {
-                    openQueue(queue, positionInQueue, true);
-                }),
-                SongConfirmationPreference.NEXT.setAction(() -> {
-                    playNext(songsToAdd);
-                }),
-                SongConfirmationPreference.ADD.setAction(() -> {
-                    enqueue(songsToAdd);
-                })
-        );
 
-        final int songCount = songsToAdd.size();
-        final String message = (songCount == 1)
-                ? context.getResources().getString(R.string.about_to_add_title_to_playing_queue)
-                : context.getResources().getString(R.string.about_to_add_x_titles_to_playing_queue, songCount);
-
-        int defaultChoice = PreferenceUtil.getInstance().getEnqueueSongsDefaultChoice();
-        if (defaultChoice == PreferenceUtil.ENQUEUE_SONGS_CHOICE_ASK) {
-            BottomSheetDialogWithButtons songActionDialog = BottomSheetDialogWithButtons.newInstance();
-            songActionDialog.setTitle(message)
-                    .setButtonList(possibleActions)
-                    .show(((AppCompatActivity) context).getSupportFragmentManager(),
-                            "songActionDialog");
-        } else {
-            for (BottomSheetDialogWithButtons.ButtonInfo action: possibleActions) {
-                if (defaultChoice == action.id) {
-                    action.action.run();
-                }
-            }
-        }
+        playNext(songsToAdd);
 
     }
 

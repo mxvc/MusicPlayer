@@ -16,11 +16,7 @@
 
 
 
-        <com.poupa.vinylmusicplayer.preferences.SongConfirmationPreference
-            app:iconSpaceReserved="false"
-            android:key="enqueue_songs_default_choice"
-            android:title="@string/pref_title_enqueue_song_default_choice"
-            />
+
 
     </com.kabouzeid.appthemehelper.common.prefs.supportv7.ATEPreferenceCategory>
 
