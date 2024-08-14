@@ -351,7 +351,7 @@
     <string name="auto_limited_listing_title">驾驶时限制列表</string>
     <string name="auto_limited_listing_subtitle">打开程序时显示完整列表</string>
 
-    <string name="action_import_from_playlist">Import from playlist</string>
+    <string name="action_import_from_playlist">导入播放列表</string>
     <string name="pref_title_enqueue_song_default_choice">点选歌曲时的默认动作</string>
     <string name="action_always_ask_for_confirmation">总是询问</string>
     <string name="about_to_add_title_to_playing_queue">About to add 1 song into the playing queue.\nHow do you want to proceed with this song?</string>
@@ -364,16 +364,16 @@
     <string name="untitled_song">Untitled</string>
     <string name="label_replay_gain" translatable="false">ReplayGain</string>
     <string name="label_replay_gain_peak">ReplayGain peak</string>
-    <string name="label_date_added">Added</string>
-    <string name="label_date_modified">Modified</string>
+    <string name="label_date_added">已添加</string>
+    <string name="label_date_modified">已修改</string>
 
     <string name="import_playlist_title">"Import from playlist"</string>
 
-    <string name="follow_system_theme_name">Follow system theme</string>
+    <string name="follow_system_theme_name">跟随系统主题</string>
 
-    <string name="pref_title_export">Export</string>
-    <string name="pref_summary_export">Export the settings as file</string>
-    <string name="pref_title_import">Import</string>
+    <string name="pref_title_export">导出</string>
+    <string name="pref_summary_export">导出配置文件</string>
+    <string name="pref_title_import">导入</string>
     <string name="pref_summary_import">Import the settings from previously exported file</string>
 
     <string name="settings_filename">Filename (without .json)</string>
