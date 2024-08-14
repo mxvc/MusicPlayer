@@ -340,7 +340,7 @@
     <string name="saf_guide_slide3_title">按下屏幕下方的选择按钮</string>
     <string name="saf_guide_slide3_description">不打开任何子目录</string>
     <string name="playlists_label">播放列表</string>
-    <string name="">历史</string>
+    <string name="history_label">历史</string>
     <string name="top_tracks_label">最高播放曲目</string>
     <string name="queue_label">队列</string>
     <string name="action_cycle_repeat">循环播放模式</string>
