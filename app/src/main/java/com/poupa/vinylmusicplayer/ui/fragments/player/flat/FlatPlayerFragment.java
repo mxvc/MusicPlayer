@@ -44,7 +44,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements SlidingUpPa
     private View playerStatusBar;
     private SlidingUpPanelLayout slidingUpPanelLayout;
     private RecyclerView recyclerView;
-    private TextView playerQueueSubHeader;
 
     private int lastColor;
 
@@ -66,7 +65,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements SlidingUpPa
         toolbarContainer = binding.toolbarContainer;
         slidingUpPanelLayout = binding.playerSlidingLayout;
         recyclerView = binding.playerRecyclerView;
-        playerQueueSubHeader = binding.playerQueueSubHeader;
 
         return binding.getRoot();
     }
@@ -153,7 +151,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements SlidingUpPa
 
     private void updateQueue() {
         playingQueueAdapter.swapDataSet(MusicPlayerRemote.getPlayingQueue(), MusicPlayerRemote.getPosition());
-        playerQueueSubHeader.setText(MusicPlayerRemote.getQueueInfoString());
         if (slidingUpPanelLayout == null || slidingUpPanelLayout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED) {
             resetToCurrentPosition();
         }
@@ -161,7 +158,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements SlidingUpPa
 
     private void updateQueuePosition() {
         playingQueueAdapter.setCurrent(MusicPlayerRemote.getPosition());
-        playerQueueSubHeader.setText(MusicPlayerRemote.getQueueInfoString());
         if (slidingUpPanelLayout == null || slidingUpPanelLayout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED) {
             resetToCurrentPosition();
         }
@@ -277,15 +273,6 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements SlidingUpPa
 
             AnimatorSet animatorSet = new AnimatorSet();
             animatorSet.playTogether(backgroundAnimator, statusBarAnimator);
-
-            int adjustedLastColor = fragment.lastColor;
-            int adjustedNewColor = newColor;
-
-            int backgroundColor = ATHUtil.resolveColor(fragment.requireActivity(), R.attr.cardBackgroundColor);
-            adjustedLastColor = VinylMusicPlayerColorUtil.getContrastedColor(adjustedLastColor, backgroundColor);
-            adjustedNewColor = VinylMusicPlayerColorUtil.getContrastedColor(adjustedNewColor, backgroundColor);
-            Animator subHeaderAnimator = ViewUtil.createTextColorTransition(fragment.playerQueueSubHeader, adjustedLastColor, adjustedNewColor);
-            animatorSet.play(subHeaderAnimator);
 
             // Workaround for a bug https://github.com/AdrienPoupa/VinylMusicPlayer/issues/620
             for (Animator animator : animatorSet.getChildAnimations()){

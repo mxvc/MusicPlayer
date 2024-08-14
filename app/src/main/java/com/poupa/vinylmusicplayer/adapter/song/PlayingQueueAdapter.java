@@ -289,10 +289,8 @@ public class PlayingQueueAdapter extends SongAdapter
     }
 
     private static Integer getBackgroundColor(AppCompatActivity activity){
-        View view = activity.findViewById(R.id.color_background); // cardPlayerFragment
-        if (view == null) {
-            view = activity.findViewById(R.id.player_status_bar); // flatPlayerFragment
-        }
+        View view =
+             activity.findViewById(R.id.player_status_bar); // flatPlayerFragment
 
         Drawable background = view.getBackground();
         if (background instanceof ColorDrawable) {

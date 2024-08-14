@@ -112,16 +112,7 @@
                         android:id="@+id/current_song"
                         layout="@layout/item_list" />
 
-                    <TextView
-                        android:id="@+id/player_queue_sub_header"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
-                        android:text="@string/up_next"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="?android:textColorSecondary" />
+
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/player_recycler_view"
