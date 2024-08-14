@@ -12,7 +12,6 @@ import com.poupa.vinylmusicplayer.appshortcuts.DynamicShortcutManager;
 import com.poupa.vinylmusicplayer.discog.Discography;
 import com.poupa.vinylmusicplayer.model.Album;
 import com.poupa.vinylmusicplayer.model.Artist;
-import com.poupa.vinylmusicplayer.model.Genre;
 import com.poupa.vinylmusicplayer.model.Song;
 
 /**
@@ -54,7 +53,7 @@ public class App extends MultiDexApplication {
         final Resources resources = context.getResources();
         Artist.UNKNOWN_ARTIST_DISPLAY_NAME = resources.getString(R.string.unknown_artist);
         Album.UNKNOWN_ALBUM_DISPLAY_NAME = resources.getString(R.string.unknown_album);
-        Genre.UNKNOWN_GENRE_DISPLAY_NAME = resources.getString(R.string.unknown_genre);
+
         Song.UNTITLED_DISPLAY_NAME =  resources.getString(R.string.untitled_song);
     }
 

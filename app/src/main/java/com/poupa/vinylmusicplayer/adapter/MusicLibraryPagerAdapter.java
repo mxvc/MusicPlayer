@@ -13,7 +13,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.poupa.vinylmusicplayer.model.CategoryInfo;
 import com.poupa.vinylmusicplayer.ui.fragments.mainactivity.library.pager.AlbumsFragment;
 import com.poupa.vinylmusicplayer.ui.fragments.mainactivity.library.pager.ArtistsFragment;
-import com.poupa.vinylmusicplayer.ui.fragments.mainactivity.library.pager.GenresFragment;
 import com.poupa.vinylmusicplayer.ui.fragments.mainactivity.library.pager.PlaylistsFragment;
 import com.poupa.vinylmusicplayer.ui.fragments.mainactivity.library.pager.SongsFragment;
 import com.poupa.vinylmusicplayer.util.PreferenceUtil;
@@ -152,7 +151,7 @@ public class MusicLibraryPagerAdapter extends FragmentPagerAdapter {
         SONGS(SongsFragment.class),
         ALBUMS(AlbumsFragment.class),
         ARTISTS(ArtistsFragment.class),
-        GENRES(GenresFragment.class),
+
         PLAYLISTS(PlaylistsFragment.class);
 
         private final Class<? extends Fragment> mFragmentClass;

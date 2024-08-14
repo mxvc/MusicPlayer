@@ -12,7 +12,6 @@ import com.poupa.vinylmusicplayer.discog.tagging.TagExtractor;
 import com.poupa.vinylmusicplayer.interfaces.MusicServiceEventListener;
 import com.poupa.vinylmusicplayer.model.Album;
 import com.poupa.vinylmusicplayer.model.Artist;
-import com.poupa.vinylmusicplayer.model.Genre;
 import com.poupa.vinylmusicplayer.model.Song;
 import com.poupa.vinylmusicplayer.provider.BlacklistStore;
 import com.poupa.vinylmusicplayer.sort.SongSortOrder;
@@ -264,35 +263,9 @@ public class Discography implements MusicServiceEventListener {
         return fullAlbum;
     }
 
-    @NonNull
-    public ArrayList<Genre> getAllGenres(@NonNull Comparator<? super Genre> sortOrder) {
-        synchronized (cache) {
-            // Make a copy here, to avoid error while the caller is iterating on the result
-            ArrayList<Genre> copy = new ArrayList<>(cache.genresByName.values());
 
-            // Perform sort inside the critical section, to avoid data race
-            // (artist or album being modified while sorting)
-            Collections.sort(copy, sortOrder);
 
-            return copy;
-        }
-    }
 
-    @Nullable
-    public ArrayList<Song> getSongsForGenre(long genreId, @NonNull Comparator<? super Song> sortOrder) {
-        synchronized (cache) {
-            ArrayList<Song> songs = cache.songsByGenreId.get(genreId);
-            if (songs == null) {return null;}
-
-            ArrayList<Song> copy = new ArrayList<>(songs);
-
-            // Perform sort inside the critical section, to avoid data race
-            // (artist or album being modified while sorting)
-            Collections.sort(copy, sortOrder);
-
-            return copy;
-        }
-    }
 
     public float getMaxReplayGain() {
         return cache.getMaxReplayGain();

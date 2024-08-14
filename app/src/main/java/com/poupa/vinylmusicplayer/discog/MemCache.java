@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 
 import com.poupa.vinylmusicplayer.model.Album;
 import com.poupa.vinylmusicplayer.model.Artist;
-import com.poupa.vinylmusicplayer.model.Genre;
 import com.poupa.vinylmusicplayer.model.Song;
 import com.poupa.vinylmusicplayer.sort.AlbumSortOrder;
 import com.poupa.vinylmusicplayer.sort.SongSortOrder;
@@ -49,7 +48,7 @@ class MemCache {
     final Map<Long, Map<Long, AlbumSlice>> albumsByAlbumIdAndArtistId = new HashMap<>();
     final Map<String, Set<Long>> albumsByName = new HashMap<>();
 
-    final Map<String, Genre> genresByName = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+
     final Map<Long, ArrayList<Song>> songsByGenreId = new HashMap<>();
     private float maxReplayGain = Float.NaN; // Computed lazily when it's needed, since it's used only on some android versions
 
@@ -59,8 +58,7 @@ class MemCache {
             album.songs.add(song);
         }
 
-        // Update genre cache
-        addSongToGenres(song);
+
 
         // Update the overall max replay gain value, if it's been computed already
         if (!Float.isNaN(maxReplayGain)) {
@@ -127,8 +125,7 @@ class MemCache {
                 }
             }
 
-            // ---- Remove song from Genre cache
-            removeSongFromGenreCache(song);
+
 
             // Update the overall max replay gain value, if it's been computed already
             if (!Float.isNaN(maxReplayGain)) {
@@ -152,7 +149,7 @@ class MemCache {
         albumsByAlbumIdAndArtistId.clear();
         albumsByName.clear();
 
-        genresByName.clear();
+
         songsByGenreId.clear();
     }
 
@@ -256,56 +253,12 @@ class MemCache {
         return result;
     }
 
-    private synchronized void removeSongFromGenreCache(@NonNull final Song song) {
-        song.genres.stream().forEach(genreName -> {
-            final Genre genre = genresByName.get(genreName);
-            if (genre != null) {
-                final ArrayList<Song> songs = songsByGenreId.get(genre.id);
-                if (songs != null) {
-                    songs.remove(song);
-                    if (songs.isEmpty()) {
-                        genresByName.remove(genre.name);
-                        songsByGenreId.remove(genre.id);
-                    } else {
-                        genre.songCount = songs.size();
-                    }
-                }
-            }
-        });
-    }
 
-    private synchronized void addSongToGenres(@NonNull final Song song) {
-        List<Genre> genres = getOrCreateGenresBySong(song);
-        genres.stream().forEach(genre->{
-            this.addSongToGenreAndUpdateCount(song, genre);
-        });
-    }
 
-    private synchronized void addSongToGenreAndUpdateCount(@NonNull final Song song, @NonNull final Genre genre) {
-        ArrayList<Song> songs = songsByGenreId.get(genre.id);
-        if (songs != null) {
-            songs.add(song);
-            genre.songCount = songs.size();
-        }
-    }
 
-    @NonNull
-    private synchronized List<Genre> getOrCreateGenresBySong(@NonNull final Song song) {
-        // If a song has no genres, empty string is the "unknown" genre
-        final List<String> genres = song.genres.isEmpty() ? List.of("") : song.genres;
 
-        return genres.stream().map(this::getOrCreateGenreByName).collect(Collectors.toList());
-    }
 
-    @NonNull
-    private synchronized Genre getOrCreateGenreByName(@NonNull final String genreName) {
-        Genre genre = genresByName.get(genreName);
-        if (genre == null) {
-            genre = new Genre(genresByName.size(), genreName, 0);
 
-            genresByName.put(genreName, genre);
-            songsByGenreId.put(genre.id, new ArrayList<>());
-        }
-        return genre;
-    }
+
+
 }

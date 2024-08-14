@@ -16,11 +16,9 @@ import com.poupa.vinylmusicplayer.R;
 import com.poupa.vinylmusicplayer.discog.Discography;
 import com.poupa.vinylmusicplayer.helper.MusicPlayerRemote;
 import com.poupa.vinylmusicplayer.model.Artist;
-import com.poupa.vinylmusicplayer.model.Genre;
 import com.poupa.vinylmusicplayer.model.Playlist;
 import com.poupa.vinylmusicplayer.ui.activities.AlbumDetailActivity;
 import com.poupa.vinylmusicplayer.ui.activities.ArtistDetailActivity;
-import com.poupa.vinylmusicplayer.ui.activities.GenreDetailActivity;
 import com.poupa.vinylmusicplayer.ui.activities.PlaylistDetailActivity;
 
 import java.util.List;
@@ -77,12 +75,7 @@ public class NavigationUtil {
         }
     }
 
-    public static void goToGenre(@NonNull final Activity activity, final Genre genre) {
-        final Intent intent = new Intent(activity, GenreDetailActivity.class);
-        intent.putExtra(GenreDetailActivity.EXTRA_GENRE, genre);
 
-        activity.startActivity(intent);
-    }
 
     public static void goToPlaylist(@NonNull final Activity activity, final Playlist playlist) {
         final Intent intent = new Intent(activity, PlaylistDetailActivity.class);

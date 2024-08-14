@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.poupa.vinylmusicplayer.model.Artist;
-import com.poupa.vinylmusicplayer.model.Genre;
 import com.poupa.vinylmusicplayer.util.MusicUtil;
 
 import java.util.ArrayList;
@@ -46,10 +45,6 @@ public class MultiValuesTagUtil {
         return mergeImpl(names, INFO_STRING_SEPARATOR, "", Artist.UNKNOWN_ARTIST_DISPLAY_NAME);
     }
 
-    @NonNull
-    public static String infoStringAsGenres(@NonNull final List<String> names) {
-        return mergeImpl(names, INFO_STRING_SEPARATOR, "", Genre.UNKNOWN_GENRE_DISPLAY_NAME);
-    }
 
     @NonNull
     public static List<String> tagEditorSplit(@Nullable final String names) {

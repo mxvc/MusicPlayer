@@ -27,7 +27,6 @@ import com.poupa.vinylmusicplayer.discog.tagging.MultiValuesTagUtil;
 import com.poupa.vinylmusicplayer.helper.MusicPlayerRemote;
 import com.poupa.vinylmusicplayer.model.Album;
 import com.poupa.vinylmusicplayer.model.Artist;
-import com.poupa.vinylmusicplayer.model.Genre;
 import com.poupa.vinylmusicplayer.model.Playlist;
 import com.poupa.vinylmusicplayer.model.Song;
 import com.poupa.vinylmusicplayer.model.lyrics.AbsSynchronizedLyrics;
@@ -123,11 +122,7 @@ public class MusicUtil {
         );
     }
 
-    @NonNull
-    public static String getGenreInfoString(@NonNull final Context context, @NonNull final Genre genre) {
-        int songCount = genre.songCount;
-        return MusicUtil.getSongCountString(context, songCount);
-    }
+
 
     @NonNull
     public static String getPlaylistInfoString(@NonNull final Context context, @NonNull List<? extends Song> songs) {
@@ -320,10 +315,6 @@ public class MusicUtil {
 
     public static boolean isAlbumNameUnknown(@Nullable String albumName) {
         return isNameUnknown(albumName, Album.UNKNOWN_ALBUM_DISPLAY_NAME);
-    }
-
-    public static boolean isGenreNameUnknown(@Nullable String genreName) {
-        return isNameUnknown(genreName, Genre.UNKNOWN_GENRE_DISPLAY_NAME);
     }
 
     public static boolean isSongTitleUnknown(@Nullable String title) {

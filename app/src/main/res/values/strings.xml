@@ -270,7 +270,6 @@
     <string name="whitelist">白名单</string>
     <string name="pref_summary_whitelist">只显示起始目录： </string>
     <string name="save_playlists_title">保存为文件</string>
-    <string name="genres">音乐类型</string>
     <string name="unknown_genre">未知音乐类型</string>
     <string name="track_number">音轨</string>
     <string name="disc_number">光碟号</string>

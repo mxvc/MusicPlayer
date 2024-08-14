@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.poupa.vinylmusicplayer.discog.Discography;
-import com.poupa.vinylmusicplayer.loader.GenreLoader;
 import com.poupa.vinylmusicplayer.loader.PlaylistSongLoader;
 import com.poupa.vinylmusicplayer.loader.SongLoader;
 import com.poupa.vinylmusicplayer.model.Song;
@@ -81,11 +80,7 @@ public class SearchQueryHelper {
             } else if (focus.equals(MediaStore.Audio.Genres.ENTRY_CONTENT_TYPE)) {
                 // Ignore Android L deprecation by using direct constant as recommended by
                 // https://developer.android.com/guide/components/intents-common
-                final String genre = extras
-                        .getString("android.intent.extra.genre");
-                if (genre != null) {
-                    return GenreLoader.getGenreSongsByName(genre);
-                }
+
             }
         }
         // Otherwise do a generic match on all known songs on the phone
