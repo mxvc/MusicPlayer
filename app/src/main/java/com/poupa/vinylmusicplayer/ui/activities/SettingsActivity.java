@@ -306,18 +306,6 @@ public class SettingsActivity extends AbsBaseActivity implements ColorChooserDia
                 });
             }
 
-            final Preference themeStyle = findPreference(PreferenceUtil.THEME_STYLE);
-            ThemeStyleUtil.updateInstance(PreferenceUtil.getInstance().getThemeStyle());
-            //ThemeStore.markChanged(getActivity());
-            themeStyle.setOnPreferenceChangeListener((preference, o) -> {
-                ThemeStyleUtil.updateInstance((String) o);
-                if (getActivity() != null) {
-                    ThemeStore.markChanged(getActivity());
-                }
-
-                return true;
-            });
-
             final Preference autoDownloadImagesPolicy = findPreference(PreferenceUtil.AUTO_DOWNLOAD_IMAGES_POLICY);
             if (autoDownloadImagesPolicy != null) {
                 setSummary(autoDownloadImagesPolicy);

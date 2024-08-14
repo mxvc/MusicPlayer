@@ -45,7 +45,7 @@ public class PlayingSongDecorationUtil {
             Song song,
             @NonNull final AppCompatActivity activity)
     {
-        PlayingSongDecorationUtil.decorate(holder.title, holder.image, holder.imageText, song, activity, songAdapter.isShowAlbumImage());
+        PlayingSongDecorationUtil.decorate(holder.title, holder.image, holder.imageText, song, activity);
 
         if ((holder.image != null) && songAdapter.isShowAlbumImage()) {
             if (!MusicPlayerRemote.isPlaying(song)) {
@@ -75,8 +75,8 @@ public class PlayingSongDecorationUtil {
             @Nullable final ImageView image,
             @Nullable final TextView imageText,
             Song song,
-            @NonNull final AppCompatActivity activity,
-            boolean showAlbumImage)
+            @NonNull final AppCompatActivity activity
+            )
     {
         final boolean isPlaying = MusicPlayerRemote.isPlaying(song);
 
@@ -85,7 +85,7 @@ public class PlayingSongDecorationUtil {
         }
 
         if (image != null) {
-            image.setVisibility((isPlaying || showAlbumImage) ? View.VISIBLE : View.GONE);
+            image.setVisibility( View.VISIBLE);
             final boolean animateIcon = PreferenceUtil.getInstance().animatePlayingSongIcon();
 
             if (isPlaying) {
@@ -115,7 +115,7 @@ public class PlayingSongDecorationUtil {
         }
 
         if (imageText != null) {
-            imageText.setVisibility((isPlaying || showAlbumImage) ? View.INVISIBLE : View.VISIBLE);
+            imageText.setVisibility( View.INVISIBLE);
         }
     }
 

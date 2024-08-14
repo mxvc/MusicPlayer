@@ -109,7 +109,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                         .songOptions(song)
                         .into(holder.image);
 
-                PlayingSongDecorationUtil.decorate(holder.title, holder.image, holder.imageText, song, activity, ThemeStyleUtil.getInstance().showSongAlbumArt());
+                PlayingSongDecorationUtil.decorate(holder.title, holder.image, holder.imageText, song, activity);
                 break;
             default:
                 ThemeStyleUtil.getInstance().setHeaderText(holder, activity, dataSet.get(position).toString());
@@ -139,7 +139,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             View itemView = binding.getRoot();
             itemView.setOnLongClickListener(null);
 
-            ThemeStyleUtil.getInstance().setHeightListItem(itemView, activity.getResources().getDisplayMetrics().density);
             ThemeStyleUtil.getInstance().setSearchCardItemStyle(itemView, activity);
 
             if (shortSeparator != null) {
@@ -169,11 +168,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 case ALBUM:
                 case SONG:
                     setImageTransitionName(activity.getString(R.string.transition_album_art));
-                    imageBorderTheme.setRadius(ThemeStyleUtil.getInstance().getAlbumRadiusImage(activity));
                     break;
                 case ARTIST:
                     setImageTransitionName(activity.getString(R.string.transition_artist_image));
-                    imageBorderTheme.setRadius(ThemeStyleUtil.getInstance().getArtistRadiusImage(activity));
                     break;
             }
         }

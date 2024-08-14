@@ -240,7 +240,6 @@ public class ArtistDetailActivity
                     }
                 });
         forceDownload = false;
-        layoutBinding.imageBorderTheme.setRadius(ThemeStyleUtil.getInstance().getAlbumRadiusImage(ArtistDetailActivity.this));
     }
 
     @Override

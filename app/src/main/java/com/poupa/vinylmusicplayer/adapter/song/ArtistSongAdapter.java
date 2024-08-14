@@ -99,13 +99,11 @@ public class ArtistSongAdapter extends ArrayAdapter<Song> {
                 .songOptions(song)
                 .into(albumArt);
         }
-        PlayingSongDecorationUtil.decorate(songTitle, albumArt, null, song, activity, true);
+        PlayingSongDecorationUtil.decorate(songTitle, albumArt, null, song, activity);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             albumArt.setTransitionName(activity.getString(R.string.transition_album_art));
         }
-        ThemeStyleUtil.getInstance().setHeightListItem(convertView, activity.getResources().getDisplayMetrics().density);
-        imageBorderTheme.setRadius(ThemeStyleUtil.getInstance().getAlbumRadiusImage(activity));
 
         final ImageView overflowButton = convertView.findViewById(R.id.menu);
         overflowButton.setOnClickListener(new SongMenuHelper.OnClickSongMenu(activity) {

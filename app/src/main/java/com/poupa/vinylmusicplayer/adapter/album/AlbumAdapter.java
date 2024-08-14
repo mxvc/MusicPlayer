@@ -233,8 +233,6 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
             super(binding);
 
             View itemView = binding.getRoot();
-            ThemeStyleUtil.getInstance().setHeightListItem(itemView, activity.getResources().getDisplayMetrics().density);
-            imageBorderTheme.setRadius(ThemeStyleUtil.getInstance().getAlbumRadiusImage(activity));
 
             setImageTransitionName(activity.getString(R.string.transition_album_art));
             menu.setVisibility(View.GONE);
@@ -243,7 +241,6 @@ public class AlbumAdapter extends AbsMultiSelectAdapter<AlbumAdapter.ViewHolder,
         public ViewHolder(@NonNull final ItemGridBinding binding) {
             super(binding);
             setImageTransitionName(activity.getString(R.string.transition_album_art));
-            imageBorderTheme.setRadius(ThemeStyleUtil.getInstance().getAlbumRadiusImage(activity));
         }
 
         public ViewHolder(@NonNull final ItemGridCardHorizontalBinding binding) {

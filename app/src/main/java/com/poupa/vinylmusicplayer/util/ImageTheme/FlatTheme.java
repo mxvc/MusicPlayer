@@ -19,25 +19,6 @@ import com.poupa.vinylmusicplayer.databinding.SubHeaderBinding;
 
 class FlatTheme implements ThemeStyle {
 
-    public boolean showSongAlbumArt() {
-        return false;
-    }
-
-    public float getAlbumRadiusImage(Activity activity) {
-        return 0;
-    }
-
-    public float getArtistRadiusImage(Activity activity) {
-        return 0;
-    }
-
-    public void setHeightListItem(View itemView, float density) {
-        //do nothing
-    }
-
-    public void setHeaderPadding(RecyclerView recyclerView, float density) {
-        //do nothing
-    }
 
     public void setHeaderText(@NonNull ViewHolder holder, AppCompatActivity activity, String title) {
         holder.title.setText(title);
@@ -54,9 +35,7 @@ class FlatTheme implements ThemeStyle {
         setSearchCardItemStyle(itemView, activity);
     }
 
-    public void setDragView(AppCompatImageView dragView) {
-        //do nothing
-    }
+
 
     public SearchAdapter.ViewHolder HeaderViewHolder(SearchAdapter adapter, LayoutInflater inflater, @NonNull ViewGroup parent, boolean attachToParent) {
         return adapter.new ViewHolder(SubHeaderBinding.inflate(inflater, parent, attachToParent));

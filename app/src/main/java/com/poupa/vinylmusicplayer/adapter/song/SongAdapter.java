@@ -223,10 +223,6 @@ public class SongAdapter
         public ViewHolder(@NonNull ItemListBinding binding) {
             super(binding);
 
-            View itemView = binding.getRoot();
-            ThemeStyleUtil.getInstance().setHeightListItem(itemView, activity.getResources().getDisplayMetrics().density);
-            imageBorderTheme.setRadius(ThemeStyleUtil.getInstance().getAlbumRadiusImage(activity));
-
             setImageTransitionName(activity.getString(R.string.transition_album_art));
             setupMenuHandlers();
         }
@@ -235,7 +231,6 @@ public class SongAdapter
             super(binding);
 
             setImageTransitionName(activity.getString(R.string.transition_album_art));
-            imageBorderTheme.setRadius(ThemeStyleUtil.getInstance().getAlbumRadiusImage(activity));
         }
 
         private void setupMenuHandlers() {

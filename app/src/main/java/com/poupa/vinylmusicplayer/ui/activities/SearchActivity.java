@@ -73,7 +73,6 @@ public class SearchActivity extends AbsMusicServiceActivity implements SearchVie
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        ThemeStyleUtil.getInstance().setHeaderPadding(recyclerView, getResources().getDisplayMetrics().density);
 
         //change scrollbar color to follow secondary color
         Drawable unwrappedDrawable = AppCompatResources.getDrawable(this, R.drawable.scrollbar_vertical_thumb);

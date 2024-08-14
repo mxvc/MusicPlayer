@@ -59,9 +59,6 @@ public class HorizontalAlbumAdapter extends AlbumAdapter {
     protected void loadAlbumCover(Album album, final ViewHolder holder) {
         if (holder.image == null) return;
 
-        if (holder.imageBorderTheme != null) {
-            holder.imageBorderTheme.setRadius(ThemeStyleUtil.getInstance().getAlbumRadiusImage(activity));
-        }
 
         GlideApp.with(activity)
                 .asBitmapPalette()

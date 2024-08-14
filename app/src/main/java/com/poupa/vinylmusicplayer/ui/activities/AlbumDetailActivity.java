@@ -148,7 +148,6 @@ public class AlbumDetailActivity
                     }
                 });
 
-        layoutBinding.imageBorderTheme.setRadius(ThemeStyleUtil.getInstance().getAlbumRadiusImage(AlbumDetailActivity.this));
     }
 
     void setColors(int color) {

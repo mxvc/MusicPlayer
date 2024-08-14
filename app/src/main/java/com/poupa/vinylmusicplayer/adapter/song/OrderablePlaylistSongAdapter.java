@@ -137,8 +137,6 @@ public class OrderablePlaylistSongAdapter
             super(binding);
             if (onMoveItemListener != null) {
                 dragView.setVisibility(View.VISIBLE);
-
-                ThemeStyleUtil.getInstance().setDragView((AppCompatImageView)dragView);
             } else {
                 dragView.setVisibility(View.GONE);
             }

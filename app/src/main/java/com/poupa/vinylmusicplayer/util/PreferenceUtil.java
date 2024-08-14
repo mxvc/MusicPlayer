@@ -140,7 +140,6 @@ public final class PreferenceUtil {
     public static final String RG_PREAMP_WITH_TAG = PrefKey.exportableKey("replaygain_preamp_with_tag");
     public static final String RG_PREAMP_WITHOUT_TAG = PrefKey.exportableKey("replaygain_preamp_without_tag");
 
-    public static final String THEME_STYLE = PrefKey.exportableKey("theme_style");
     private static final String CLASSIC_THEME = "classic";
     public static final String ROUNDED_THEME = "rounded";
 
@@ -792,10 +791,6 @@ public final class PreferenceUtil {
         return defaultCategoryInfos;
     }
 
-    @NonNull
-    public String getThemeStyle() {
-        return mPreferences.getString(THEME_STYLE, CLASSIC_THEME);
-    }
 
     @NonNull
     public String getReplayGainSourceMode() {
