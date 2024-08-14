@@ -251,13 +251,7 @@ public class MusicPlayerRemote {
             return;
         }
 
-        // If one tapped on the very first element of History queue, the positionInQueue will be -1
-        final int adjustedPosition = Math.max(positionInQueue, 0);
-        final ArrayList<Song> songsToAdd = new ArrayList<>(queue.subList(adjustedPosition, queue.size()));
-
-
-        playNext(songsToAdd);
-
+        openQueue(queue, positionInQueue, true);
     }
 
     private static boolean tryToHandleOpenPlayingQueue(final Collection<? extends Song> queue, final int startPosition, final boolean startPlaying) {
