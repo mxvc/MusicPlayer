@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/player_footer_frame"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -41,7 +40,6 @@
             tools:ignore="RtlHardcoded,RtlSymmetry" />
 
         <SeekBar
-            android:id="@+id/player_progress_slider"
             style="@style/MusicProgressSlider"
             android:layout_height="match_parent"
             android:layout_toLeftOf="@id/player_song_total_time"
@@ -51,14 +49,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/player_media_controller_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/fab_media_controller_container_height"
         android:layoutDirection="ltr"
         tools:ignore="ContentDescription,UnusedAttribute">
 
         <ImageButton
-            android:id="@+id/player_prev_button"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_centerVertical="true"
@@ -71,7 +67,6 @@
             tools:ignore="MissingPrefix" />
 
         <ImageButton
-            android:id="@+id/player_next_button"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_centerVertical="true"
@@ -84,7 +79,6 @@
             tools:ignore="MissingPrefix" />
 
         <ImageButton
-            android:id="@+id/player_repeat_button"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_alignParentStart="true"
@@ -97,7 +91,6 @@
             tools:ignore="MissingPrefix" />
 
         <ImageButton
-            android:id="@+id/player_shuffle_button"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_alignParentEnd="true"
@@ -116,7 +109,6 @@
             android:layout_centerInParent="true" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/player_play_pause_fab"
             style="@style/Fab"
             android:layout_centerInParent="true"
             app:elevation="4dp"

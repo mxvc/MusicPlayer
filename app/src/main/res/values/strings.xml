@@ -17,7 +17,6 @@
     <string name="action_share">分享</string>
     <string name="action_settings">"设置"</string>
     <string name="action_grant">授予</string>
-    <string name="action_about">关于</string>
     <string name="action_clear_playlist">清空播放列表</string>
     <string name="action_add_to_favorites">添加到收藏</string>
     <string name="action_remove_from_favorites">从收藏中移除</string>
@@ -82,11 +81,9 @@
     <string name="delete_x_playlists"><![CDATA[是否删除 <b>%1$d</b> 个播放列表？]]></string>
     <string name="delete_song_x"><![CDATA[是否删除歌曲 <b>%1$s</b>？]]></string>
     <string name="delete_x_songs"><![CDATA[是否删除 <b>%1$d</b> 首歌曲？]]></string>
-    <string name="remove_song_x_from_playlist"><![CDATA[是否从播放列表中移除 <b>%1$s</b>？]]></string>
     <string name="remove_x_songs_from_playlist"><![CDATA[是否从播放列表中移除 <b>%1$d</b> 首歌曲？]]></string>
     <string name="delete_song_title">删除歌曲</string>
     <string name="delete_songs_title">删除多首歌曲</string>
-    <string name="remove_song_from_playlist_title">从播放列表中移除歌曲</string>
     <string name="remove_songs_from_playlist_title">从播放列表中移除多首歌曲</string>
     <string name="rename_playlist_title">重命名播放列表</string>
     <string name="delete_playlist_title">删除播放列表</string>
@@ -116,10 +113,8 @@
     <string name="pref_header_colors">颜色</string>
     <string name="pref_header_now_playing_screen">正在播放界面</string>
     <string name="pref_title_general_theme">全局主题</string>
-    <string name="pref_header_album">专辑</string>
     <string name="pref_header_audio">声音</string>
     <string name="pref_header_images">图片</string>
-    <string name="pref_header_lockscreen">锁屏</string>
     <string name="pref_header_playlists">播放列表</string>
     <string name="pref_header_notification">通知</string>
     <string name="pref_title_navigation_bar">着色导航栏</string>
@@ -177,27 +172,9 @@
     <string name="action_new_playlist">新建播放列表…</string>
     <string name="new_playlist_title">新建播放列表</string>
     <string name="colored_footers">着色页脚</string>
-    <string name="special_thanks_to">特别鸣谢</string>
     <string name="show_footer">显示页脚</string>
-    <string name="changelog">更新日志</string>
-    <string name="licenses">许可信息</string>
     <string name="permissions_denied">未能获取权限。</string>
     <string name="permission_external_storage_denied">访问外部存储权限被拒绝。</string>
-    <string name="support_development">支持开发者</string>
-    <string name="version">版本</string>
-    <string name="author">作者</string>
-    <string name="write_an_email">撰写邮件</string>
-    <string name="fork_on_github">创建 GitHub 分支</string>
-    <string name="visit_website">访问网站</string>
-    <string name="report_bugs">提交 bug</string>
-    <string name="report_bugs_summary">提交 bug 或申请添加新功能</string>
-    <string name="rate_on_google_play">评分</string>
-    <string name="rate_on_google_play_summary">如果喜欢 Vinyl Music Player 请在 Play Store 中留下您的好评。</string>
-    <string name="aidan_follestad_summary">主题引擎以及其他一些优秀功能。</string>
-    <string name="michael_cook_summary">精致的质感设计图标。</string>
-    <string name="maarten_corpel_summary">Play Store 标题图以及空专辑封面的设计方案。</string>
-    <string name="aleksandar_tesic_summary">在设计风格上的帮助。</string>
-    <string name="website">网站</string>
     <string name="up_next">即将播放</string>
     <string name="pref_title_now_playing_screen_appearance">外观</string>
     <string name="intro_label">介绍页</string>
@@ -219,27 +196,10 @@
     <string name="app_widget_small_name">磁带 - 小尺寸</string>
     <string name="app_widget_card_name">磁带 - 卡片</string>
     <string name="report_an_issue">报告问题</string>
-    <string name="bug_report_issue">问题</string>
-    <string name="login">登录</string>
     <string name="title">标题</string>
-    <string name="description">说明</string>
     <string name="device_info">设备信息</string>
-    <string name="bug_report_use_account">通过 Github 帐号发送</string>
     <string name="bug_report_manual">手动发送</string>
-    <string name="username">用户名</string>
-    <string name="password">密码</string>
-    <string name="bug_report_no_title">请输入问题的标题</string>
-    <string name="bug_report_no_description">请输入问题的说明</string>
-    <string name="bug_report_no_username">请输入您在 Github 上的有效用户名</string>
-    <string name="bug_report_no_password">请输入您在 Github 上的有效密码</string>
-    <string name="bug_report_uploading">正在将报告上传至 Github…</string>
-    <string name="bug_report_failed">无法发送报告</string>
-    <string name="bug_report_failed_wrong_credentials">错误的用户名或密码</string>
-    <string name="bug_report_failed_invalid_token">无效的访问令牌。请联系应用开发者。</string>
-    <string name="bug_report_failed_issues_not_available">所选的资源库中未启用错误报告。请联系应用开发者。</string>
-    <string name="bug_report_failed_unknown">发生了一个意外错误。请联系应用开发者。</string>
     <string name="copied_device_info_to_clipboard">设备信息已复制到剪贴板。</string>
-    <string name="your_account_data_is_only_used_for_authentication">您的帐号信息仅用于身份认证。</string>
     <string name="you_will_be_forwarded_to_the_issue_tracker_website">将带您跳转至报告问题的网站。</string>
     <string name="app_shortcut_shuffle_all_short">随机播放</string>
     <string name="app_shortcut_top_tracks_short">最喜欢的歌曲</string>
@@ -247,7 +207,6 @@
     <string name="playlist_is_empty">播放列表为空</string>
     <string name="playing_notification_description">正在播放通知提供了播放/暂停等便捷操作。</string>
     <string name="playing_notification_name">正在播放通知</string>
-    <string name="eugene_cheung_summary">因他对源代码的贡献。</string>
     <string name="add_action">添加</string>
     <string name="blacklist">黑名单</string>
     <string name="remove_from_blacklist">从黑名单中移除</string>
@@ -303,14 +262,12 @@
     <string name="not_recently_played">最近未播放过</string>
     <string name="skipped_songs">跳过的歌曲</string>
     <string name="time_unit_minutes">分</string>
-    <string name="karim_abou_zeid_summary">最初作者</string>
     <string name="saved_x_playlists_to_x">将%1$d播放列表保存到%2$s。</string>
     <string name="saved_x_playlists_to_x_failed_to_save_x">将%1$d播放列表保存到%2$s，保存到%3$d时失败。</string>
     <string name="some_files_are_not_listed_in_the_media_store">有些文件未在媒体库中列出。</string>
     <string name="deleting_songs">正在删除歌曲</string>
     <string name="snack_bar_action_undo">撤销操作</string>
     <string name="snack_bar_title_removed_song">已删除</string>
-    <string name="adrian_summary">设计了专辑页面。</string>
     <string name="sort_order_date_added_reverse">添加日期</string>
     <string name="dialog_ringtone_title">设置为铃声</string>
     <string name="dialog_ringtone_message">在设置铃声前请允许Vinyl音乐播放器在下一屏修改系统设置。</string>
@@ -371,8 +328,7 @@
 
     <string name="follow_system_theme_name">跟随系统主题</string>
 
-    
-    <string name="settings_filename">文件名 (不带 .json)</string>
+
     <string name="pref_title_oops_handler_enabled">收集崩溃报告</string>
     <string name="pref_summary_oops_handler_enabled">收集崩溃报告已协助应用开发</string>
     <string name="pref_title_queue_sync_with_media_store">修改媒体标签时同步队列</string>
@@ -387,12 +343,6 @@
     <string name="grid_size_6" translatable="false">6</string>
     <string name="grid_size_7" translatable="false">7</string>
     <string name="grid_size_8" translatable="false">8</string>
-
-
-    <string name="maintainers">Maintainers</string>
-    <string name="contributors">Contributors</string>
-    <string name="label_other_contributors">+ many other contributors</string>
-    <string name="missing_webview_component">"This device doesn't support WebView, which is necessary to perform the requested action.\nIt is missing a system component."</string>
 
 
     <string name="sd_card">SD卡</string>
@@ -430,6 +380,4 @@
     <string name="android13_no_file_browser_error">Your system doesn\'t appear to have a file browser to handle OPEN_DOCUMENT_TREE.</string>
 
 
-    <string name="write_permission">总是询问写文件权限</string>
-    <string name="pref_summary_write_permission">To revoke already granted permission, go to android settings for this app, then &quot;Storage &amp; cache&quot; and revoke external storage</string>
 </resources>

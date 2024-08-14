@@ -6,12 +6,10 @@
     android:layout_height="match_parent">
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/player_album_cover_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <FrameLayout
-        android:id="@+id/player_lyrics"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
@@ -22,7 +20,6 @@
         android:alpha="0">
 
         <TextView
-            android:id="@+id/player_lyrics_line1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -34,7 +31,6 @@
             android:visibility="gone" />
 
         <TextView
-            android:id="@+id/player_lyrics_line2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -47,7 +43,6 @@
     </FrameLayout>
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/player_favorite_icon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
