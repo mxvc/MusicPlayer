@@ -56,7 +56,7 @@ public class PlayingQueueAdapter extends SongAdapter
 
     public PlayingQueueAdapter(@NonNull final AbsThemeActivity activity, List<? extends Song> dataSet, int current, boolean usePalette, @Nullable PaletteColorHolder palette) {
         super(activity, dataSet, R.layout.item_list, usePalette, palette);
-        this.showAlbumImage = false; // We don't want to load it in this adapter
+        this.showAlbumImage = true; // We don't want to load it in this adapter
         this.current = current;
     }
 

@@ -161,6 +161,7 @@ public class SongAdapter
             holder.text.setText(getSongText(song));
         }
 
+
         PlayingSongDecorationUtil.decorate(this, holder, song, activity);
     }
 
