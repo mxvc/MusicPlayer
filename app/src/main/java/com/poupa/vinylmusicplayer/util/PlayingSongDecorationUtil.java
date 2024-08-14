@@ -86,7 +86,6 @@ public class PlayingSongDecorationUtil {
 
         if (image != null) {
             image.setVisibility( View.VISIBLE);
-            final boolean animateIcon = PreferenceUtil.getInstance().animatePlayingSongIcon();
 
             if (isPlaying) {
                 final int color = ATHUtil.resolveColor(activity, R.attr.iconColor, ThemeStore.textColorSecondary(activity));
@@ -103,14 +102,14 @@ public class PlayingSongDecorationUtil {
                         .override(size)
                         .into(image);
 
-                if (animateIcon) { image.startAnimation(sIconAnimation); }
+                 image.startAnimation(sIconAnimation);
             }
             else {
                 // restore default setting
                 image.clearColorFilter();
                 image.setScaleType(VINYL_ALBUM_ART_SCALE_TYPE);
 
-                if (animateIcon) { image.clearAnimation(); }
+                image.clearAnimation();
             }
         }
 

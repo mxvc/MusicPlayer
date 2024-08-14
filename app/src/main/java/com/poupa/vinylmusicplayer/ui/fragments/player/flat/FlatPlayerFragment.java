@@ -357,14 +357,12 @@ public class FlatPlayerFragment extends AbsPlayerFragment implements SlidingUpPa
             currentSongViewHolder.title.setText(song.getTitle());
             currentSongViewHolder.text.setText(MusicUtil.getSongInfoString(song));
 
-            if (PreferenceUtil.getInstance().animatePlayingSongIcon()) {
                 final boolean isPlaying = MusicPlayerRemote.isPlaying(song);
                 if (isPlaying) {
                     currentSongViewHolder.image.startAnimation(PlayingSongDecorationUtil.sIconAnimation);
                 } else {
                     currentSongViewHolder.image.clearAnimation();
                 }
-            }
         }
 
         @Override

@@ -120,7 +120,6 @@ public final class PreferenceUtil {
     private static final String START_DIRECTORY = PrefKey.exportableKey("start_directory");
 
     private static final String SYNCHRONIZED_LYRICS_SHOW = PrefKey.exportableKey("synchronized_lyrics_show");
-    private static final String ANIMATE_PLAYING_SONG_ICON = PrefKey.exportableKey("animate_playing_song_icon");
     private static final String SHOW_SONG_NUMBER = PrefKey.exportableKey("show_song_number_on_playing_queue");
 
     private static final String INITIALIZED_BLACKLIST = PrefKey.nonExportableKey("initialized_blacklist");
@@ -691,9 +690,7 @@ public final class PreferenceUtil {
         return mPreferences.getBoolean(SYNCHRONIZED_LYRICS_SHOW, true);
     }
 
-    public boolean animatePlayingSongIcon() {
-        return mPreferences.getBoolean(ANIMATE_PLAYING_SONG_ICON, false);
-    }
+
 
     boolean showSongNumber() {
         return mPreferences.getBoolean(SHOW_SONG_NUMBER, false);
