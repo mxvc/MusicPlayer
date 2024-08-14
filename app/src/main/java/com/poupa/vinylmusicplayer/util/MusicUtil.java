@@ -116,7 +116,7 @@ public class MusicUtil {
     @NonNull
     public static String getSongInfoString(@NonNull final Song song) {
         return buildInfoString(
-                PreferenceUtil.getInstance().showSongNumber() ? getTrackNumberInfoString(song) : null,
+                null,
                 MultiValuesTagUtil.infoStringAsArtists(song.artistNames),
                 Album.getTitle(song.albumName)
         );
