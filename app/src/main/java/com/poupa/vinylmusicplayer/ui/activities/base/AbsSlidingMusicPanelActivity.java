@@ -55,17 +55,9 @@ public abstract class AbsSlidingMusicPanelActivity extends AbsMusicServiceActivi
         super.onCreate(savedInstanceState);
         setContentView(createContentView());
 
-        currentNowPlayingScreen = PreferenceUtil.getInstance().getNowPlayingScreen();
         Fragment fragment; // must implement AbsPlayerFragment
-        switch (currentNowPlayingScreen) {
-            case FLAT:
                 fragment = new FlatPlayerFragment();
-                break;
-            case CARD:
-            default:
-                fragment = new CardPlayerFragment();
-                break;
-        }
+
         getSupportFragmentManager().beginTransaction().replace(R.id.player_fragment_container, fragment).commit();
         getSupportFragmentManager().executePendingTransactions();
 
@@ -115,9 +107,6 @@ public abstract class AbsSlidingMusicPanelActivity extends AbsMusicServiceActivi
     @Override
     protected void onResume() {
         super.onResume();
-        if (currentNowPlayingScreen != PreferenceUtil.getInstance().getNowPlayingScreen()) {
-            postRecreate();
-        }
         reload();
     }
 

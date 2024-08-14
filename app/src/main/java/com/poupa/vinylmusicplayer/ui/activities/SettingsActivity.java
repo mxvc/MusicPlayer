@@ -42,7 +42,6 @@ import com.poupa.vinylmusicplayer.preferences.BlacklistPreferenceDialog;
 import com.poupa.vinylmusicplayer.preferences.LibraryPreference;
 import com.poupa.vinylmusicplayer.preferences.LibraryPreferenceDialog;
 import com.poupa.vinylmusicplayer.preferences.NowPlayingScreenPreference;
-import com.poupa.vinylmusicplayer.preferences.NowPlayingScreenPreferenceDialog;
 import com.poupa.vinylmusicplayer.preferences.PreAmpPreference;
 import com.poupa.vinylmusicplayer.preferences.PreAmpPreferenceDialog;
 import com.poupa.vinylmusicplayer.preferences.SmartPlaylistPreference;
@@ -211,9 +210,7 @@ public class SettingsActivity extends AbsBaseActivity implements ColorChooserDia
         @Nullable
         @Override
         public DialogFragment onCreatePreferenceDialog(Preference preference) {
-            if (preference instanceof NowPlayingScreenPreference) {
-                return NowPlayingScreenPreferenceDialog.newInstance();
-            } else if (preference instanceof BlacklistPreference) {
+           if (preference instanceof BlacklistPreference) {
                 return BlacklistPreferenceDialog.newInstance();
             } else if (preference instanceof LibraryPreference) {
                 return LibraryPreferenceDialog.newInstance();
@@ -542,7 +539,7 @@ public class SettingsActivity extends AbsBaseActivity implements ColorChooserDia
 
 
 
-            updateNowPlayingScreen();
+
             updatePlaylistsSummary();
             updateConfirmationSongSummary();
         }
@@ -559,9 +556,8 @@ public class SettingsActivity extends AbsBaseActivity implements ColorChooserDia
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            if (TextUtils.equals(key, PreferenceUtil.NOW_PLAYING_SCREEN_ID)) {
-                updateNowPlayingScreen();
-            } else if (TextUtils.equals(key, PreferenceUtil.CLASSIC_NOTIFICATION)) {
+
+             if (TextUtils.equals(key, PreferenceUtil.CLASSIC_NOTIFICATION)) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     findPreference(PreferenceUtil.COLORED_NOTIFICATION).setEnabled(sharedPreferences.getBoolean(key, false));
                 }
@@ -588,12 +584,7 @@ public class SettingsActivity extends AbsBaseActivity implements ColorChooserDia
             }
         }
 
-        private void updateNowPlayingScreen() {
-            final Preference nowPlayingScreenPref = findPreference(PreferenceUtil.NOW_PLAYING_SCREEN_ID);
-            NowPlayingScreen nowPlayingScreen = PreferenceUtil.getInstance().getNowPlayingScreen();
-            nowPlayingScreenPref.setSummary(nowPlayingScreen.titleRes);
-            NowPlayingScreenPreferenceDialog.newInstance().onPageSelected(nowPlayingScreen.id);
-        }
+
 
         private void updatePlaylistsSummary() {
             final Context context = getContext();

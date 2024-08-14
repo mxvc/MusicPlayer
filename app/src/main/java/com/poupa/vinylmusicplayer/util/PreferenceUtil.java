@@ -56,7 +56,6 @@ public final class PreferenceUtil {
     public static final String REMEMBER_LAST_TAB = PrefKey.exportableKey("remember_last_tab");
     private static final String LAST_PAGE = PrefKey.exportableKey("last_start_page");
     private static final String LAST_MUSIC_CHOOSER = PrefKey.exportableKey("last_music_chooser");
-    public static final String NOW_PLAYING_SCREEN_ID = PrefKey.exportableKey("now_playing_screen_id");
 
     private static final String ARTIST_SORT_ORDER = PrefKey.exportableKey("artist_sort_order");
     public static final String ALBUM_SORT_ORDER = PrefKey.exportableKey("album_sort_order");
@@ -281,19 +280,9 @@ public final class PreferenceUtil {
         return mPreferences.getInt(LAST_MUSIC_CHOOSER, 0);
     }
 
-    public NowPlayingScreen getNowPlayingScreen() {
-        final int id = mPreferences.getInt(NOW_PLAYING_SCREEN_ID, 0);
-        for (final NowPlayingScreen nowPlayingScreen : NowPlayingScreen.values()) {
-            if (nowPlayingScreen.id == id) {return nowPlayingScreen;}
-        }
-        return NowPlayingScreen.CARD;
-    }
 
-    public void setNowPlayingScreen(NowPlayingScreen nowPlayingScreen) {
-        mPreferences.edit()
-                .putInt(NOW_PLAYING_SCREEN_ID, nowPlayingScreen.id)
-                .apply();
-    }
+
+
 
     public boolean coloredNotification() {
         return mPreferences.getBoolean(COLORED_NOTIFICATION, true);
