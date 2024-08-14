@@ -30,7 +30,6 @@ import com.poupa.vinylmusicplayer.R;
 import com.poupa.vinylmusicplayer.databinding.ActivityMainContentBinding;
 import com.poupa.vinylmusicplayer.databinding.ActivityMainDrawerLayoutBinding;
 import com.poupa.vinylmusicplayer.databinding.SlidingMusicPanelLayoutBinding;
-import com.poupa.vinylmusicplayer.dialogs.ChangelogDialog;
 import com.poupa.vinylmusicplayer.discog.Discography;
 import com.poupa.vinylmusicplayer.glide.GlideApp;
 import com.poupa.vinylmusicplayer.glide.VinylGlideExtension;
@@ -43,7 +42,6 @@ import com.poupa.vinylmusicplayer.model.Song;
 import com.poupa.vinylmusicplayer.provider.StaticPlaylist;
 import com.poupa.vinylmusicplayer.service.MusicService;
 import com.poupa.vinylmusicplayer.ui.activities.base.AbsSlidingMusicPanelActivity;
-import com.poupa.vinylmusicplayer.ui.activities.intro.AppIntroActivity;
 import com.poupa.vinylmusicplayer.ui.fragments.mainactivity.folders.FoldersFragment;
 import com.poupa.vinylmusicplayer.ui.fragments.mainactivity.library.LibraryFragment;
 import com.poupa.vinylmusicplayer.util.MusicUtil;
@@ -55,7 +53,6 @@ import java.util.List;
 
 public class MainActivity extends AbsSlidingMusicPanelActivity implements PaletteColorHolder {
     public static final String TAG = MainActivity.class.getSimpleName();
-    public static final int APP_INTRO_REQUEST = 100;
 
     private static final int LIBRARY = 0;
     private static final int FOLDERS = 1;
@@ -70,7 +67,6 @@ public class MainActivity extends AbsSlidingMusicPanelActivity implements Palett
     @Nullable
     private View navigationDrawerHeader;
 
-    private boolean blockRequestPermissions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,9 +85,7 @@ public class MainActivity extends AbsSlidingMusicPanelActivity implements Palett
             restoreCurrentFragment();
         }
 
-        if (!checkShowIntro()) {
-            showChangelog();
-        }
+
     }
 
     private void setMusicChooser(int key) {
@@ -126,21 +120,7 @@ public class MainActivity extends AbsSlidingMusicPanelActivity implements Palett
         currentFragment = (MainActivityFragmentCallbacks) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == APP_INTRO_REQUEST) {
-            blockRequestPermissions = false;
-            if (!hasPermissions()) {
-                requestPermissions();
-            }
-        }
-    }
 
-    @Override
-    protected void requestPermissions() {
-        if (!blockRequestPermissions) super.requestPermissions();
-    }
 
     @Override
     protected View createContentView() {
@@ -347,28 +327,9 @@ public class MainActivity extends AbsSlidingMusicPanelActivity implements Palett
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
     }
 
-    private boolean checkShowIntro() {
-        if (!PreferenceUtil.getInstance().introShown()) {
-            PreferenceUtil.getInstance().setIntroShown();
-            ChangelogDialog.setChangelogRead(this);
-            blockRequestPermissions = true;
-            new Handler().postDelayed(() -> startActivityForResult(new Intent(MainActivity.this, AppIntroActivity.class), APP_INTRO_REQUEST), 50);
-            return true;
-        }
-        return false;
-    }
 
-    private void showChangelog() {
-        try {
-            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
-            int currentVersion = pInfo.versionCode;
-            if (currentVersion != PreferenceUtil.getInstance().getLastChangelogVersion()) {
-                new ChangelogDialog.Builder(this).show();
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+
+
 
     @Override
     protected void reload() {

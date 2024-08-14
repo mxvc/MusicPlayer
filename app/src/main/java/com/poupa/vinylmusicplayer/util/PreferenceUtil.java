@@ -105,7 +105,6 @@ public final class PreferenceUtil {
     private static final String SLEEP_TIMER_FINISH_SONG = PrefKey.exportableKey("sleep_timer_finish_music");
 
     private static final String LAST_CHANGELOG_VERSION = PrefKey.nonExportableKey("last_changelog_version");
-    private static final String INTRO_SHOWN = PrefKey.nonExportableKey("intro_shown");
 
     public static final String AUTO_DOWNLOAD_IMAGES_POLICY = PrefKey.exportableKey("auto_download_images_policy");
     private static final String AUTO_DOWNLOAD_ALWAYS = "always";
@@ -674,13 +673,7 @@ public final class PreferenceUtil {
         return mPreferences.getInt(LAST_CHANGELOG_VERSION, -1);
     }
 
-    public void setIntroShown() {
-        mPreferences.edit().putBoolean(INTRO_SHOWN, true).apply();
-    }
 
-    public boolean introShown() {
-        return mPreferences.getBoolean(INTRO_SHOWN, false);
-    }
 
     public void setRememberShuffle(final boolean rememberShuffle) {
         mPreferences.edit()
