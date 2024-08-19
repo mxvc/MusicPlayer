@@ -290,16 +290,7 @@ public class SettingsActivity extends AbsBaseActivity implements ColorChooserDia
                 });
             }
 
-            final TwoStatePreference rememberLastTab = findPreference(PreferenceUtil.REMEMBER_LAST_TAB);
-            if (rememberLastTab != null) {
-                rememberLastTab.setChecked(PreferenceUtil.getInstance().rememberLastTab());
-                rememberLastTab.setOnPreferenceChangeListener((preference, newValue) -> {
-                    // Save preference
-                    PreferenceUtil.getInstance().setRememberLastTab((Boolean) newValue);
 
-                    return true;
-                });
-            }
 
             final TwoStatePreference whitelistEnabled = findPreference(PreferenceUtil.WHITELIST_ENABLED);
             if (whitelistEnabled != null) {

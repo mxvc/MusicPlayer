@@ -290,13 +290,11 @@
     <string name="pref_summary_maintain_top_tracks_playlist">维护一个最多播放列表</string>
     <string name="pref_summary_maintain_skipped_songs_playlist">维护一个跳过歌曲列表</string>
     <string name="pref_title_animate_playing_song_icon">动画显示正在播放歌曲图标</string>
-    <string name="pref_title_remember_last_tab">记住最后显示页面</string>
     <string name="pref_title_remember_shuffle">记住随机播放状态</string>
     <string name="reset_action">重置</string>
     <string name="no_genres">无音乐类型</string>
     <string name="pref_summary_widget_background_transparent">使控件的背景透明显示</string>
     <string name="pref_summary_animate_playing_song_icon">在歌曲相关视图中动画显示当前歌曲图标</string>
-    <string name="pref_summary_remember_last_tab">启动时回到上次打开的视图</string>
     <string name="pref_summary_remember_shuffle">选择新的歌曲列表时保持随机播放状态</string>
     <string name="not_recently_played">最近未播放过</string>
     <string name="skipped_songs">跳过的歌曲</string>

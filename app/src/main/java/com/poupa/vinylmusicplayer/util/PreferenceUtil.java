@@ -53,8 +53,6 @@ public final class PreferenceUtil {
     public static final String GENERAL_THEME_FOLLOW_SYSTEM_LIGHT_OR_DARK = "follow_system_light_or_dark";
     public static final String GENERAL_THEME_FOLLOW_SYSTEM_LIGHT_OR_BLACK = "follow_system_light_or_black";
 
-    public static final String REMEMBER_LAST_TAB = PrefKey.exportableKey("remember_last_tab");
-    private static final String LAST_PAGE = PrefKey.exportableKey("last_start_page");
     private static final String LAST_MUSIC_CHOOSER = PrefKey.exportableKey("last_music_chooser");
 
     private static final String ARTIST_SORT_ORDER = PrefKey.exportableKey("artist_sort_order");
@@ -246,25 +244,12 @@ public final class PreferenceUtil {
         }
     }
 
-    public void setRememberLastTab(final boolean rememberLastTab) {
-        mPreferences.edit()
-                .putBoolean(REMEMBER_LAST_TAB, rememberLastTab)
-                .apply();
-    }
 
-    public boolean rememberLastTab() {
-        return mPreferences.getBoolean(REMEMBER_LAST_TAB, true);
-    }
 
-    public void setLastPage(final int value) {
-        final SharedPreferences.Editor editor = mPreferences.edit();
-        editor.putInt(LAST_PAGE, value);
-        editor.apply();
-    }
 
-    public int getLastPage() {
-        return mPreferences.getInt(LAST_PAGE, 0);
-    }
+
+
+
 
     public void setLastMusicChooser(final int value) {
         final SharedPreferences.Editor editor = mPreferences.edit();

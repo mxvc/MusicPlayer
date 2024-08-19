@@ -94,7 +94,6 @@ public class LibraryFragment
             int position = pagerAdapter.getItemPosition(current);
             if (position < 0) position = 0;
             layoutBinding.pager.setCurrentItem(position);
-            PreferenceUtil.getInstance().setLastPage(position);
 
             // hide the tab bar with single tab
             layoutBinding.tabs.setVisibility(pagerAdapter.getCount() == 1 ? View.GONE : View.VISIBLE);
@@ -126,9 +125,7 @@ public class LibraryFragment
 
         updateTabVisibility();
 
-        if (PreferenceUtil.getInstance().rememberLastTab()) {
-            layoutBinding.pager.setCurrentItem(PreferenceUtil.getInstance().getLastPage());
-        }
+
         layoutBinding.pager.addOnPageChangeListener(this);
     }
 
@@ -371,7 +368,7 @@ public class LibraryFragment
 
     @Override
     public void onPageSelected(int position) {
-        PreferenceUtil.getInstance().setLastPage(position);
+
     }
 
     @Override
