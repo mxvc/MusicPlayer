@@ -58,11 +58,9 @@ public class BlacklistStore extends SQLiteOpenHelper {
                 sInstance.addPathImpl(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES));
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                     sInstance.addPathImpl(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RECORDINGS));
-                    sInstance.addPathImpl(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_AUDIOBOOKS));
                 }
                 // 语音，通过记录等
                 sInstance.addPathImpl(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC + "/Recordings"));
-
 
                 PreferenceUtil.getInstance().setInitializedBlacklist();
             }
