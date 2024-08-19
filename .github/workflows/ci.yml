@@ -1,6 +1,11 @@
 name: GithubActions CI
 
-on: [workflow_dispatch,push]
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*.*.*"
 
 jobs:
   build:
@@ -22,30 +27,12 @@ jobs:
     - name: Build CI application
       run: ./gradlew assembleCiRelease
 
-    - name: Archive APKs
-      uses: actions/upload-artifact@v4
+    - name: Release
+      uses: softprops/action-gh-release@v2
       with:
-        name: outputs-apk
-        path: app/build/outputs/apk/**/*.apk
-        
-
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write 
-    steps:
-    - name: Retrieve built assets
-      uses: actions/download-artifact@v4
-      with:
-        name: outputs-apk
-        path: app/build/outputs/apk
-    - uses: "marvinpinto/action-automatic-releases@latest"
-      with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: v${{github.run_id}}
-        title: "apk"
-        prerelease: false
         files: |
-          app/build/outputs/apk/ci/release/*.apk
-   
+          app/build/outputs/apk/**/*.apk
+
+
+
+
