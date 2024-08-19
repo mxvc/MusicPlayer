@@ -24,10 +24,10 @@ jobs:
       with:
         gradle-version: wrapper
 
-    - name: Build CI application
+    - name: 打包
       run: ./gradlew assembleCiRelease
 
-    - name: Release
+    - name: 发布
       uses: softprops/action-gh-release@v2
       with:
         files: |
