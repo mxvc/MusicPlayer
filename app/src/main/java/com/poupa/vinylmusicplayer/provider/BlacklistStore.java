@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Build;
 import android.os.Environment;
 
 import androidx.annotation.NonNull;
@@ -55,6 +56,10 @@ public class BlacklistStore extends SQLiteOpenHelper {
                 sInstance.addPathImpl(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_ALARMS));
                 sInstance.addPathImpl(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_NOTIFICATIONS));
                 sInstance.addPathImpl(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                    sInstance.addPathImpl(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RECORDINGS));
+                    sInstance.addPathImpl(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_AUDIOBOOKS));
+                }
 
                 PreferenceUtil.getInstance().setInitializedBlacklist();
             }
